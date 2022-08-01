@@ -1,0 +1,9 @@
+{
+    "preset": "psr12",
+    "notName": [
+        "*.blade.php"
+    ],
+    "exclude": [
+        ".docker"
+    ]
+}
