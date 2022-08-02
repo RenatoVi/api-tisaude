@@ -29,18 +29,6 @@ services:
     networks:
       - laravelnet
 
-  ### Redis ################################################
-  redis:
-    build:
-      context: ./docker/redis
-    restart: unless-stopped
-    volumes:
-      - ./docker/redis:/data
-    ports:
-      - "${REDIS_EXTERNAL_PORT}:6379"
-    networks:
-      - laravelnet
-
   ### PostgreSQL Server Container ##################################
   db_postgres:
     build:
