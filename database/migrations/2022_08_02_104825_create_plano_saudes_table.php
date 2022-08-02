@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('plano_saudes', function (Blueprint $table) {
             $table->id();
             $table->string('descricao', 255);
-            $table->string('telefone', 11);
+            $table->string('telefone');
             $table->timestamps();
         });
     }

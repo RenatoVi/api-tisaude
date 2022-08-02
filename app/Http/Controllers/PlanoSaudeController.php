@@ -15,6 +15,7 @@ class PlanoSaudeController extends Controller
     public function store(StorePlanoSaudeRequest $planoSaudeRequest, CreatePlanoSaudeAction $createPlanoSaudeAction)
     {
         try{
+            ds($planoSaudeRequest->validated());
             $planoSaude = $createPlanoSaudeAction->run($planoSaudeRequest->validated());
             return new PlanoSaudeResource($planoSaude);
         }catch (\Exception $e){

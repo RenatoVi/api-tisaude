@@ -8,6 +8,6 @@ class CreateEspecialidadeAction
 {
     public function run(array $data): Especialidade
     {
-        return new Especialidade();
+        return Especialidade::query()->create($data);
     }
 }

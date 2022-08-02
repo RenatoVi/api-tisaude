@@ -8,6 +8,7 @@ class CreatePlanoSaudeAction
 {
     public function run(array $data): PlanoSaude
     {
-        return new PlanoSaude();
+        return PlanoSaude::query()
+            ->create($data);
     }
 }

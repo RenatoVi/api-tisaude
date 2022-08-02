@@ -1,23 +1,20 @@
 <?php
 
 use App\Models\Medico;
-use App\Models\Paciente;
-use App\Models\Telefone;
 use App\Models\User;
 use Illuminate\Support\Facades\Config;
-
-use function Pest\Laravel\post;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
-use function Pest\Laravel\put;
 use function Pest\Laravel\delete;
+use function Pest\Laravel\post;
+use function Pest\Laravel\put;
 
 beforeEach(function () {
     $user = User::query()->whereEmail(Config::get('api.email'))->first();
     $this->actingAs($user, 'api');
 });
 
-it('criar um paciente', function () {
+it('criar um medico', function () {
     $medico = Medico::factory()->make();
     $response = post('/api/medico/store', [
         'nome' => $medico->nome,
@@ -30,7 +27,7 @@ it('criar um paciente', function () {
     ]);
 });
 
-it('editar um paciente', function () {
+it('editar um medico', function () {
     $medico = Medico::factory()->createOne();
     $medicoTwo = Medico::factory()->make();
     $response = put('/api/medico/update/'.$medico->id, [
@@ -44,7 +41,7 @@ it('editar um paciente', function () {
     ]);
 });
 
-it('deletar um paciente', function () {
+it('deletar um medico', function () {
     $medico = Medico::factory()->createOne();
     $response = delete('/api/medico/destroy',
         ['id' => $medico->id]

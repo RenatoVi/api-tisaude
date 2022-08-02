@@ -8,6 +8,6 @@ class CreateVinculoAction
 {
     public function run(array $data): Vinculo
     {
-        return new Vinculo();
+        return Vinculo::query()->create($data);
     }
 }

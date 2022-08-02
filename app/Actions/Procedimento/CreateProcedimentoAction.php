@@ -8,6 +8,6 @@ class CreateProcedimentoAction
 {
     public function run(array $data): Procedimento
     {
-        return new Procedimento();
+        return Procedimento::query()->create($data);
     }
 }
