@@ -28,6 +28,6 @@ class AuthController extends Controller
 
     public function me()
     {
-        dd('ola');
+        return response()->json(['ola' => 'mundo']);
     }
 }
