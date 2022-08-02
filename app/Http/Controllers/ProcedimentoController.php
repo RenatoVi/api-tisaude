@@ -2,84 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Procedimento\CreateProcedimentoAction;
+use App\Actions\Procedimento\UpdateProcedimentoAction;
+use App\Http\Requests\Procedimento\DestroyProcedimentoRequest;
+use App\Http\Requests\Procedimento\StoreProcedimentoRequest;
+use App\Http\Requests\Procedimento\UpdateProcedimentoRequest;
+use App\Http\Resources\ProcedimentoResource;
 use App\Models\Procedimento;
-use Illuminate\Http\Request;
 
 class ProcedimentoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function store(StoreProcedimentoRequest $storeProcedimentoRequest, CreateProcedimentoAction $createProcedimentoAction)
     {
-        //
+        try{
+            $procedimento = $createProcedimentoAction->run($storeProcedimentoRequest->validated());
+            return new ProcedimentoResource($procedimento);
+        }catch (\Exception $e){
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Procedimento  $procedimento
-     * @return \Illuminate\Http\Response
-     */
     public function show(Procedimento $procedimento)
     {
-        //
+        try{
+            return new ProcedimentoResource($procedimento);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Procedimento  $procedimento
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Procedimento $procedimento)
+    public function update(UpdateProcedimentoRequest $updateProcedimentoRequest, Procedimento $procedimento, UpdateProcedimentoAction $updateProcedimentoAction)
     {
-        //
+        try {
+            $procedimento = $updateProcedimentoAction->run($procedimento, $updateProcedimentoRequest->validated());
+            return new ProcedimentoResource($procedimento);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Procedimento  $procedimento
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Procedimento $procedimento)
+    public function destroy(DestroyProcedimentoRequest $destroyProcedimentoRequest)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Procedimento  $procedimento
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Procedimento $procedimento)
-    {
-        //
+        try {
+            $procedimento = Procedimento::query()->findOrFail($destroyProcedimentoRequest->input('id'));
+            $procedimento->delete();
+            return response()->json(['success' => 'Procedimento deletado com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

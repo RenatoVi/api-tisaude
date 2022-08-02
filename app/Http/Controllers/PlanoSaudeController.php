@@ -2,84 +2,54 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\PlanoSaude\CreatePlanoSaudeAction;
+use App\Actions\PlanoSaude\UpdatePlanoSaudeAction;
+use App\Http\Requests\PlanoSaude\DestroyPlanoSaudeRequest;
+use App\Http\Requests\PlanoSaude\StorePlanoSaudeRequest;
+use App\Http\Requests\PlanoSaude\UpdatePlanoSaudeRequest;
+use App\Http\Resources\PlanoSaudeResource;
 use App\Models\PlanoSaude;
-use Illuminate\Http\Request;
 
 class PlanoSaudeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function store(StorePlanoSaudeRequest $planoSaudeRequest, CreatePlanoSaudeAction $createPlanoSaudeAction)
     {
-        //
+        try{
+            $planoSaude = $createPlanoSaudeAction->run($planoSaudeRequest->validated());
+            return new PlanoSaudeResource($planoSaude);
+        }catch (\Exception $e){
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\PlanoSaude  $planoSaude
-     * @return \Illuminate\Http\Response
-     */
     public function show(PlanoSaude $planoSaude)
     {
-        //
+        try{
+            return new PlanoSaudeResource($planoSaude);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\PlanoSaude  $planoSaude
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(PlanoSaude $planoSaude)
+    public function update(UpdatePlanoSaudeRequest $planoSaudeRequest, PlanoSaude $planoSaude, UpdatePlanoSaudeAction $updatePlanoSaudeAction)
     {
-        //
+        try {
+            $planoSaude = $updatePlanoSaudeAction->run($planoSaude, $planoSaudeRequest->validated());
+            return new PlanoSaudeResource($planoSaude);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\PlanoSaude  $planoSaude
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, PlanoSaude $planoSaude)
+    public function destroy(DestroyPlanoSaudeRequest $planoSaudeRequest)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\PlanoSaude  $planoSaude
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(PlanoSaude $planoSaude)
-    {
-        //
+        try {
+            $planoSaude = PlanoSaude::query()->findOrFail($planoSaudeRequest->input('id'));
+            $planoSaude->delete();
+            return response()->json(['success' => 'Plano de Saude deletado com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

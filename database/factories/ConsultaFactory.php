@@ -2,22 +2,19 @@
 
 namespace Database\Factories;
 
+use App\Models\Consulta;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Consulta>
- */
 class ConsultaFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Consulta::class;
+
     public function definition()
     {
         return [
-            //
+            'data' => $this->faker->dateTimeBetween('-1 years', '+1 years'),
+            'hora' => $this->faker->time('H:i:s'),
+            'particular' => $this->faker->randomElement([true, false]),
         ];
     }
 }

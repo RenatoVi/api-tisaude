@@ -2,22 +2,17 @@
 
 namespace Database\Factories;
 
+use App\Models\Vinculo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Vinculo>
- */
 class VinculoFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Vinculo::class;
+
     public function definition()
     {
         return [
-            //
+            'contrato' => $this->faker->word,
         ];
     }
 }

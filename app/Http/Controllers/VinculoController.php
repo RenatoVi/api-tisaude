@@ -2,84 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Vinculo\CreateVinculoAction;
+use App\Actions\Vinculo\UpdateVinculoAction;
+use App\Http\Requests\Vinculo\DestroyVinculoRequest;
+use App\Http\Requests\Vinculo\StoreVinculoRequest;
+use App\Http\Requests\Vinculo\UpdateVinculoRequest;
+use App\Http\Resources\VinculoResource;
 use App\Models\Vinculo;
-use Illuminate\Http\Request;
 
 class VinculoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function store(StoreVinculoRequest $storeVinculoRequest, CreateVinculoAction $createVinculoAction)
     {
-        //
+        try{
+            $vinculo = $createVinculoAction->run($storeVinculoRequest->validated());
+            return new VinculoResource($vinculo);
+        }catch (\Exception $e){
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Vinculo  $vinculo
-     * @return \Illuminate\Http\Response
-     */
     public function show(Vinculo $vinculo)
     {
-        //
+        try{
+            return new VinculoResource($vinculo);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Vinculo  $vinculo
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Vinculo $vinculo)
+    public function update(UpdateVinculoRequest $updateVinculoRequest, Vinculo $vinculo, UpdateVinculoAction $updateVinculoAction)
     {
-        //
+        try {
+            $medico = $updateVinculoAction->run($vinculo, $updateVinculoRequest->validated());
+            return new VinculoResource($medico);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Vinculo  $vinculo
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Vinculo $vinculo)
+    public function destroy(DestroyVinculoRequest $destroyVinculoRequest)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Vinculo  $vinculo
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Vinculo $vinculo)
-    {
-        //
+        try {
+            $vinculo = Vinculo::query()->findOrFail($destroyVinculoRequest->input('id'));
+            $vinculo->delete();
+            return response()->json(['success' => 'Vinculo deletado com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

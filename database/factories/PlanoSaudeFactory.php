@@ -2,22 +2,18 @@
 
 namespace Database\Factories;
 
+use App\Models\PlanoSaude;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PlanoSaude>
- */
 class PlanoSaudeFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = PlanoSaude::class;
+
     public function definition()
     {
         return [
-            //
+            'descricao' => $this->faker->name,
+            'telefone' => $this->faker->phoneNumber,
         ];
     }
 }

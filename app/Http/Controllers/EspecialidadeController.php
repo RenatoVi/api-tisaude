@@ -2,84 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Especialidade\CreateEspecialidadeAction;
+use App\Actions\Especialidade\UpdateEspecialidadeAction;
+use App\Http\Requests\Especialidade\DestroyEspecialidadeRequest;
+use App\Http\Requests\Especialidade\StoreEspecialidadeRequest;
+use App\Http\Requests\Especialidade\UpdateEspecialidadeRequest;
+use App\Http\Resources\EspecialidadeResource;
 use App\Models\Especialidade;
-use Illuminate\Http\Request;
 
 class EspecialidadeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function store(StoreEspecialidadeRequest $storeEspecialidadeRequest, CreateEspecialidadeAction $createEspecialidadeAction)
     {
-        //
+        try{
+            $especialidade = $createEspecialidadeAction->run($storeEspecialidadeRequest->validated());
+            return new EspecialidadeResource($especialidade);
+        }catch (\Exception $e){
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Especialidade  $especialidade
-     * @return \Illuminate\Http\Response
-     */
     public function show(Especialidade $especialidade)
     {
-        //
+        try{
+            return new EspecialidadeResource($especialidade);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Especialidade  $especialidade
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Especialidade $especialidade)
+    public function update(UpdateEspecialidadeRequest $updateEspecialidadeRequest, Especialidade $especialidade, UpdateEspecialidadeAction $updateEspecialidadeAction)
     {
-        //
+        try {
+            $especialidade = $updateEspecialidadeAction->run($especialidade, $updateEspecialidadeRequest->validated());
+            return new EspecialidadeResource($especialidade);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Especialidade  $especialidade
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Especialidade $especialidade)
+    public function destroy(DestroyEspecialidadeRequest $destroyEspecialidadeRequest)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Especialidade  $especialidade
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Especialidade $especialidade)
-    {
-        //
+        try {
+            $especialidade = Especialidade::query()->findOrFail($destroyEspecialidadeRequest->input('id'));
+            $especialidade->delete();
+            return response()->json(['success' => 'Especialidade deletada com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

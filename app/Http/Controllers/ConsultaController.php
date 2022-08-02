@@ -2,84 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Consulta\CreateConsultaAction;
+use App\Actions\Consulta\UpdateConsultaAction;
+use App\Http\Requests\Consulta\DestroyConsultaRequest;
+use App\Http\Requests\Consulta\StoreConsultaRequest;
+use App\Http\Requests\Consulta\UpdateConsultaRequest;
+use App\Http\Resources\ConsultaResource;
 use App\Models\Consulta;
-use Illuminate\Http\Request;
 
 class ConsultaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function store(StoreConsultaRequest $storeConsultaRequest, CreateConsultaAction $createConsultaAction)
     {
-        //
+        try{
+            $consulta = $createConsultaAction->run($storeConsultaRequest->validated());
+            return new ConsultaResource($consulta);
+        }catch (\Exception $e){
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Consulta  $consulta
-     * @return \Illuminate\Http\Response
-     */
     public function show(Consulta $consulta)
     {
-        //
+        try{
+            return new ConsultaResource($consulta);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Consulta  $consulta
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Consulta $consulta)
+    public function update(UpdateConsultaRequest $updateConsultaRequest, Consulta $consulta, UpdateConsultaAction $updateConsultaAction)
     {
-        //
+        try {
+            $medico = $updateConsultaAction->run($consulta, $updateConsultaRequest->validated());
+            return new ConsultaResource($medico);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Consulta  $consulta
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Consulta $consulta)
+    public function destroy(DestroyConsultaRequest $destroyConsultaRequest)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Consulta  $consulta
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Consulta $consulta)
-    {
-        //
+        try {
+            $consulta = Consulta::query()->findOrFail($destroyConsultaRequest->input('id'));
+            $consulta->delete();
+            return response()->json(['success' => 'Consulta deletado com sucesso!']);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }
