@@ -24,7 +24,7 @@ class PacienteController extends Controller
 
     public function show(Paciente $paciente)
     {
-        try{
+        try {
             return new PacienteResource($paciente);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

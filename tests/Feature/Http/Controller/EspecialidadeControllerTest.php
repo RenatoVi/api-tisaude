@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controller;
 use App\Models\Especialidade;
 use App\Models\User;
 use Illuminate\Support\Facades\Config;
+
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Laravel\delete;
@@ -41,7 +42,8 @@ it('editar uma especialidade', function () {
 
 it('deletar uma especialidade', function () {
     $especialidade = Especialidade::factory()->createOne();
-    $response = delete('/api/especialidade/destroy',
+    $response = delete(
+        '/api/especialidade/destroy',
         ['id' => $especialidade->id]
     )->assertStatus(200);
     assertDatabaseMissing('especialidades', [

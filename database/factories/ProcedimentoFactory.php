@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Procedimento;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
 class ProcedimentoFactory extends Factory
 {
     protected $model = Procedimento::class;

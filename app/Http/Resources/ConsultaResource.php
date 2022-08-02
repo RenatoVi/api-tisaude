@@ -13,6 +13,9 @@ class ConsultaResource extends JsonResource
             'data' => $this->data,
             'hora' => $this->hora,
             'particular' => $this->particular,
+            'paciente' => new PacienteResource($this->paciente),
+            'medico' => new MedicoResource($this->medico),
+            'procedimento' => new ProcedimentoResource($this->procedimento),
         ];
     }
 }

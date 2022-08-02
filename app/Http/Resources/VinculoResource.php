@@ -11,9 +11,9 @@ class VinculoResource extends JsonResource
         return [
             'id' => $this->id,
             'contrato' => $this->contrato,
-            'paciente_id' => $this->paciente_id,
-            'plano_saude_id' => $this->plano_saude_id,
-            'consulta_id' => $this->consulta_id,
+            'paciente' => new PacienteResource($this->paciente),
+            'plano_saude' => new PlanoSaudeResource($this->plano_saude),
+            'consulta' => new ConsultaResource($this->consulta),
         ];
     }
 }

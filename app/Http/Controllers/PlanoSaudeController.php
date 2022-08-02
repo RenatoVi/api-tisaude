@@ -14,11 +14,10 @@ class PlanoSaudeController extends Controller
 {
     public function store(StorePlanoSaudeRequest $planoSaudeRequest, CreatePlanoSaudeAction $createPlanoSaudeAction)
     {
-        try{
-            ds($planoSaudeRequest->validated());
+        try {
             $planoSaude = $createPlanoSaudeAction->run($planoSaudeRequest->validated());
             return new PlanoSaudeResource($planoSaude);
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
@@ -26,7 +25,7 @@ class PlanoSaudeController extends Controller
 
     public function show(PlanoSaude $planoSaude)
     {
-        try{
+        try {
             return new PlanoSaudeResource($planoSaude);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

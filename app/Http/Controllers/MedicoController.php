@@ -14,17 +14,17 @@ class MedicoController extends Controller
 {
     public function store(CreateMedicoRequest $createMedicoRequest, CreateMedicoAction $createMedicoAction)
     {
-        try{
+        try {
             $medico = $createMedicoAction->run($createMedicoRequest->validated());
             return new MedicoResource($medico);
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
     public function show(Medico $medico)
     {
-        try{
+        try {
             return new MedicoResource($medico);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

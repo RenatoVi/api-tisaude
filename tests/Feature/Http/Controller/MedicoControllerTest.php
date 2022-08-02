@@ -3,6 +3,7 @@
 use App\Models\Medico;
 use App\Models\User;
 use Illuminate\Support\Facades\Config;
+
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Laravel\delete;
@@ -43,7 +44,8 @@ it('editar um medico', function () {
 
 it('deletar um medico', function () {
     $medico = Medico::factory()->createOne();
-    $response = delete('/api/medico/destroy',
+    $response = delete(
+        '/api/medico/destroy',
         ['id' => $medico->id]
     )->assertStatus(200);
     assertDatabaseMissing('medicos', [

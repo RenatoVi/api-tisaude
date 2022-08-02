@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controller;
 use App\Models\Procedimento;
 use App\Models\User;
 use Illuminate\Support\Facades\Config;
+
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Laravel\delete;
@@ -45,7 +46,8 @@ it('editar um procedimento', function () {
 
 it('deletar um procedimento', function () {
     $procedimento = Procedimento::factory()->createOne();
-    $response = delete('/api/procedimento/destroy',
+    $response = delete(
+        '/api/procedimento/destroy',
         ['id' => $procedimento->id]
     )->assertStatus(200);
     assertDatabaseMissing('procedimentos', [

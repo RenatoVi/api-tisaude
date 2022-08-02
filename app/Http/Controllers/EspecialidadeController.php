@@ -14,17 +14,17 @@ class EspecialidadeController extends Controller
 {
     public function store(StoreEspecialidadeRequest $storeEspecialidadeRequest, CreateEspecialidadeAction $createEspecialidadeAction)
     {
-        try{
+        try {
             $especialidade = $createEspecialidadeAction->run($storeEspecialidadeRequest->validated());
             return new EspecialidadeResource($especialidade);
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
     public function show(Especialidade $especialidade)
     {
-        try{
+        try {
             return new EspecialidadeResource($especialidade);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

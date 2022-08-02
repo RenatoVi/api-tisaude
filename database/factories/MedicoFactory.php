@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Medico;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
 class MedicoFactory extends Factory
 {
     protected $model = Medico::class;

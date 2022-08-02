@@ -57,7 +57,8 @@ it('editar um paciente', function () {
 
 it('deletar um paciente', function () {
     $paciente = Paciente::factory()->createOne();
-    $response = delete('/api/paciente/destroy',
+    $response = delete(
+        '/api/paciente/destroy',
         ['id' => $paciente->id]
     )->assertStatus(200);
     assertDatabaseMissing('pacientes', [

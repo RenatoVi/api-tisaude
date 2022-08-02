@@ -5,6 +5,7 @@ namespace Tests\Feature\Http\Controller;
 use App\Models\PlanoSaude;
 use App\Models\User;
 use Illuminate\Support\Facades\Config;
+
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\assertDatabaseMissing;
 use function Pest\Laravel\delete;
@@ -45,7 +46,8 @@ it('editar um plano de saude', function () {
 
 it('deletar um plano de saude', function () {
     $planoSaude = PlanoSaude::factory()->createOne();
-    $response = delete('/api/plano-saude/destroy',
+    $response = delete(
+        '/api/plano-saude/destroy',
         ['id' => $planoSaude->id]
     )->assertStatus(200);
     assertDatabaseMissing('plano_saudes', [

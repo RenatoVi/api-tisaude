@@ -1,0 +1,1384 @@
+{
+	"info": {
+		"_postman_id": "bc844ddf-d543-426b-b38e-5ae669bbfea6",
+		"name": "TISAUDE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TiSaude",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"email\": \"renato@gmail.com\",\r\n\t\"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Paciente",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas\",\r\n\t\"data_nascimento\": \"2011-12-12\",\r\n\t\"telefone\": \"63981413924\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/paciente/store",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"paciente",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/paciente/destroy",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"paciente",
+										"destroy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas 2\",\r\n\t\"data_nascimento\": \"2011-12-13\",\r\n\t\"telefone\": \"63981413925\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/paciente/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"paciente",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas 2\",\r\n\t\"data_nascimento\": \"2011-12-13\",\r\n\t\"telefone\": \"63981413925\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/paciente/show/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"paciente",
+										"show",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Medico",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas\",\r\n\t\"crm\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/medico/store",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"medico",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/medico/destroy",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"medico",
+										"destroy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas 100\",\r\n\t\"crm\": \"123123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/medico/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"medico",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/medico/show/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"medico",
+										"show",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Especialidade",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/especialidade/store",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"especialidade",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/especialidade/destroy",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"especialidade",
+										"destroy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas 100\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/especialidade/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"especialidade",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/especialidade/show/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"especialidade",
+										"show",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Plano de Saude",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"descricao\": \"Lopes Chagas\",\r\n    \"telefone\": \"63 98141-3924\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/plano-saude/store",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plano-saude",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/plano-saude/destroy",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plano-saude",
+										"destroy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"descricao\": \"Lopes Chagas\",\r\n    \"telefone\": \"63 98141-3924\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/plano-saude/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plano-saude",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/plano-saude/show/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"plano-saude",
+										"show",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Procedimento",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas\",\r\n    \"valor\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/procedimento/store",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"procedimento",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/procedimento/destroy",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"procedimento",
+										"destroy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"nome\": \"Lopes Chagas\",\r\n    \"valor\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/procedimento/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"procedimento",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/procedimento/show/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"procedimento",
+										"show",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Consulta",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"data\": \"2022-12-12\",\r\n\t\"hora\": \"12:12\",\r\n    \"paciente\": 1,\r\n    \"medico\": 1,\r\n    \"procedimento\": 1,\r\n    \"particular\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/consulta/store",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"consulta",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/medico/destroy",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"medico",
+										"destroy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"data\": \"2022-12-12\",\r\n\t\"hora\": \"12:12\",\r\n    \"paciente\": 1,\r\n    \"medico\": 1,\r\n    \"procedimento\": 1,\r\n    \"particular\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/consulta/update/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"consulta",
+										"update",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/consulta/show/24",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"consulta",
+										"show",
+										"24"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Vinculo",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"paciente\": 1,\r\n    \"plano_saude\": 1,\r\n    \"consulta\": 2,\r\n\t\"contrato\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/vinculo/store",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"vinculo",
+										"store"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"id\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/medico/destroy",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"medico",
+										"destroy"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"paciente\": 1,\r\n    \"plano_saude\": 1,\r\n    \"consulta\": 2,\r\n\t\"contrato\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/vinculo/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"vinculo",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzQ2ZDZmY2QzY2ZjNjYwNmU2Y2IzZTI2ZDVmZDA4NzFkNDk5N2Q5YTdiODU0ZmEzMzhmMzlhZTM2OGFlZWJkZDFiMTlmMTVlOGMwMzY3NGEiLCJpYXQiOjE2NTk0Mzg5NzQuMTU3MTMyLCJuYmYiOjE2NTk0Mzg5NzQuMTU3MTMzLCJleHAiOjE2OTA5NzQ5NzQuMTUxNzI0LCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.LmIpuuUzOkPiVkZA9SwNfOVkjpBVRBUXTbxt96P3WzDxmexBi2f1NHYGJLMcYO-Tg-rn8svWmpJjLvxvsOWiYgquqCu_pbiC92UyGRMV1srqQmvfHFdHkIM8WiC0aG-WEwg2AN9bEQdWoEoOHT9WxGbtYSSlAFXvdxew48abuCFN089QYQpo1iCkbExFcDuDz-KvNNhDS-q5SNheBCql4AsFpVmOMnZ7ekRsICc1zImUEYGIeFMGhSD_ItNQoeG5sHRo5XikFnDhfbAdva0DM9zmIfG9bCNfyP_t859JayjMBAqcpLwkvzWv3cz4En-cKJu8Ie2lyDydbEv6JqSRc1c1n3SvJovXgXAeKeVLk4rW-XcbuB8FjV1WPym4_S0vuHQwwaZwyZpRxS6V1NQPD774GSGFEUJVTTkYMJclI5CkD5rKgQyhWNfGKIlen41jfh2_zSFg0SONPQp5l88mWFnfC2kCEzUhe7rfygn6SYZORNujqF2fC2S34YdmRS6jd7IropPvFG3ems-3Dehb8TziSu77DecvIhbEqGXxJImV4YPp2JHTTQeJ44WalYNPsNd2pFfOacQcekcefNfCcr_osGkqvZzOtCPCK28keQ5LGfafDrDPy5tvmgNzj2yfHqw_mMCKgOihRM55Xjk-B-W8vEdbSVyvDDwofg4ksq4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8000/api/vinculo/show/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"vinculo",
+										"show",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

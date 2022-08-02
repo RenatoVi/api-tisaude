@@ -14,17 +14,17 @@ class ProcedimentoController extends Controller
 {
     public function store(StoreProcedimentoRequest $storeProcedimentoRequest, CreateProcedimentoAction $createProcedimentoAction)
     {
-        try{
+        try {
             $procedimento = $createProcedimentoAction->run($storeProcedimentoRequest->validated());
             return new ProcedimentoResource($procedimento);
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
     public function show(Procedimento $procedimento)
     {
-        try{
+        try {
             return new ProcedimentoResource($procedimento);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

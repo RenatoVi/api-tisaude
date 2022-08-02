@@ -14,17 +14,17 @@ class VinculoController extends Controller
 {
     public function store(StoreVinculoRequest $storeVinculoRequest, CreateVinculoAction $createVinculoAction)
     {
-        try{
+        try {
             $vinculo = $createVinculoAction->run($storeVinculoRequest->validated());
             return new VinculoResource($vinculo);
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
     public function show(Vinculo $vinculo)
     {
-        try{
+        try {
             return new VinculoResource($vinculo);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

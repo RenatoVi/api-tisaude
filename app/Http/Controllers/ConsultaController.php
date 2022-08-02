@@ -14,17 +14,17 @@ class ConsultaController extends Controller
 {
     public function store(StoreConsultaRequest $storeConsultaRequest, CreateConsultaAction $createConsultaAction)
     {
-        try{
+        try {
             $consulta = $createConsultaAction->run($storeConsultaRequest->validated());
             return new ConsultaResource($consulta);
-        }catch (\Exception $e){
+        } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
 
     public function show(Consulta $consulta)
     {
-        try{
+        try {
             return new ConsultaResource($consulta);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
@@ -34,8 +34,8 @@ class ConsultaController extends Controller
     public function update(UpdateConsultaRequest $updateConsultaRequest, Consulta $consulta, UpdateConsultaAction $updateConsultaAction)
     {
         try {
-            $medico = $updateConsultaAction->run($consulta, $updateConsultaRequest->validated());
-            return new ConsultaResource($medico);
+            $consulta = $updateConsultaAction->run($consulta, $updateConsultaRequest->validated());
+            return new ConsultaResource($consulta);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
